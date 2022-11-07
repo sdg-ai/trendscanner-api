@@ -14,7 +14,7 @@ class InputText(BaseModel):
 
 dotenv.load_dotenv()
 client = http3.AsyncClient()
-ec = EnrichmentCoordinator(False)
+ec = EnrichmentCoordinator(True)
 
 """ # Trends Innovations Service
 trends_innovations_host = os.environ.get('TRENDS_INNOVATIONS_HOST')

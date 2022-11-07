@@ -61,7 +61,7 @@ class EnrichmentCoordinator:
                             (entity[2]['entityType'] and 'Place' in entity[2]['entityType']):
                         loc_class = self.locs.get_location(entity[0])
                         if loc_class.country:
-                            entity[2]['country'] = country_code_map[loc_class.country][0]
+                            entity[2]['country'] = country_code_map[loc_class.country.lower()][0]
 
                 if entity[0] not in entity_list:
                     entity_list.append(entity[0])
