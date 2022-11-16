@@ -12,7 +12,7 @@ class TrendsInnovationClassifier:
         #TODO: This should be initialized in a general __init__
         trends_innovations_host = os.environ.get('TRENDS_INNOVATIONS_HOST')
         trends_innovations_port = os.environ.get('TRENDS_INNOVATIONS_PORT')
-        if(isinstance(trends_innovations_port,int)):
+        if(trends_innovations_port.isnumeric()):
             self.trends_service = trends_innovations_host + ':' + trends_innovations_port
         else:
             self.trends_service = trends_innovations_host

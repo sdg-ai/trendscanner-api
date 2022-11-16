@@ -18,7 +18,7 @@ class EntityExtractor:
                 #TODO: This should be initialized in a general __init__
         article_entities_host = os.environ.get('ARTICLE_ENTITIES_HOST')
         article_entities_port = os.environ.get('ARTICLE_ENTITIES_PORT')
-        if(isinstance(article_entities_port,int)):
+        if(article_entities_port.isnumeric()):
             self.entities_service = article_entities_host + ':' + article_entities_port
         else:
             self.entities_service = article_entities_host

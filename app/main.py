@@ -69,7 +69,12 @@ async def get_entities():
 @app.post("/trends")
 def process_trends(input_text:InputText):
     #data = {"text":input_text.text}
-    output_data = ec.process(input_text.text)
+    #output_data = ec.process(input_text.text)
 
+    print("Checking data")
+    for i in range(0, 30):
+        print(input_text.text[i])
+
+    output_data = {"Hello": "there"}
     return output_data
 

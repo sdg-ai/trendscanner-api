@@ -9,7 +9,7 @@ class SentimentInterface:
                 #TODO: This should be initialized in a general __init__
         article_sentiment_host = os.environ.get('ARTICLE_SENTIMENT_HOST')
         article_sentiment_port = os.environ.get('ARTICLE_SENTIMENT_PORT')
-        if(isinstance(article_sentiment_port,int)):
+        if(article_sentiment_port.isnumeric()):
             self.sentiment_service = article_sentiment_host + ':' + article_sentiment_port
         else:
             self.sentiment_service = article_sentiment_host

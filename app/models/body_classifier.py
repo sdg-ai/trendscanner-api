@@ -17,8 +17,8 @@ class BodyNonbodyClassifier:
         #TODO: This should be initialized in a general __init__
         body_classifier_host = os.environ.get('BODY_CLASSIFIER_HOST')
         body_classifier_port = os.environ.get('BODY_CLASSIFIER_PORT')
-        if(isinstance(body_classifier_port,int)):
-            self.body_service = body_classifier_host + ':' + body_classifier_port
+        if(body_classifier_port.isnumeric()):
+            self.body_service = body_classifier_host + ':' + str(body_classifier_port)
         else:
             self.body_service = body_classifier_host
 
