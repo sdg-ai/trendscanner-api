@@ -1,2 +1,2 @@
 # trendscanner-api
-api code for the trendscanner project
+General API for TrendScanner project
