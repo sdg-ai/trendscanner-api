@@ -35,8 +35,21 @@ class EnrichmentCoordinator:
             from graphlocation.location import Locations
             self.locs = Locations()
 
+            
+    def span_tokenize(self, text):
+        text_objects = []
+        sents = nltk.sent_tokenize(text)
+        offset = 0
+        for sent in sents:
+            offset = text.find(sent, offset)
+            text_obj = {'string_indices': [offset,offset + len(sent)], 'text': sent}
+            text_objects.append(text_obj)
+            offset += len(sent)
+        return text_objects
+    
+    
     def clean_text(self, text):
-        sentences = nltk.sent_tokenize(text)
+        sentences = self.span_tokenize(text)
         cleaned_sentences = []
         for sentence in sentences:
             prediction = self.cleaner.predict(sentence)
